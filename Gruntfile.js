@@ -572,8 +572,8 @@ module.exports = function(grunt) {
     'release',[
       'lint',
       'copy',
-      'sass:expanded',
-      'sass:min',
+      //'sass:expanded',
+      //'sass:min',
       'postcss:expended',
       'postcss:min',
       'concat:dist',

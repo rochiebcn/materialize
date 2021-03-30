@@ -290,6 +290,10 @@
       var uniqueID = Materialize.guid();
       $select.data('select-id', uniqueID);
       var wrapper = $('<div class="select-wrapper"></div>');
+      // to fix Chrome 73 bug
+      wrapper.click(function (e) {
+        e.stopPropagation();
+      });
       wrapper.addClass($select.attr('class'));
       var options = $('<ul id="select-options-' + uniqueID +'" class="dropdown-content select-dropdown ' + (multiple ? 'multiple-select-dropdown' : '') + '"></ul>'),
           selectChildren = $select.children('option, optgroup'),
